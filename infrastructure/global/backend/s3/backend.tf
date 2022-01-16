@@ -1,3 +1,5 @@
+# You need to comment out this when first time initializing and applying global S3 bucket
+# And then uncomment and `terraform init` again to sync state and lock files to AWS
 terraform {
   backend "s3" {
     bucket               = "naumanen-click-backend"

@@ -10,7 +10,6 @@ variable "environment" {
 
 variable "domain_validation_options" {
   description = "Domain validation options used for records"
-  type        = string
 }
 
 variable "cloudfront_distribution_domain_name" {

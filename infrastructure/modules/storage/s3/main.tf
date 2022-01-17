@@ -11,7 +11,7 @@ resource "aws_s3_bucket" "bucket" {
   }
 
   tags = {
-    Name        = var.purpose_of_bucket
+    name        = var.purpose_of_bucket
   }
 
   server_side_encryption_configuration {

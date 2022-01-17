@@ -10,11 +10,20 @@ module "acm_certificate" {
   environment = var.environment
 }
 
+module "cloudfront" {
+  source                      = "../../networking/cloudfront"
+  domain_name                 = var.domain_name
+  certificate_arn             = module.acm_certificate.acm_certificate_arn
+  bucket_regional_domain_name = module.bucket.bucket_regional_domain_name
+}
+
 module "route53" {
-  source                    = "../../networking/route53"
-  domain_name               = var.domain_name
-  environment               = var.environment
-  domain_validation_options = module.acm_certificate.domain_validation_options
+  source                                 = "../../networking/route53"
+  domain_name                            = var.domain_name
+  environment                            = var.environment
+  domain_validation_options              = module.acm_certificate.domain_validation_options
+  cloudfront_distribution_domain_name    = module.cloudfront.cloudfront_distribution_domain_name
+  cloudfront_distribution_hosted_zone_id = module.cloudfront.cloudfront_distribution_hosted_zone_id
 }
 
 module "acm_cert_validation" {

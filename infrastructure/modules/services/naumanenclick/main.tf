@@ -1,7 +1,14 @@
 module "bucket" {
-    source              = "../../storage/s3"
-    bucket_name         = "naumanen.click" 
-    purpose_of_bucket   = "Store data"
+  source            = "../../storage/s3"
+  bucket_name       = "naumanen.click" 
+  purpose_of_bucket = "Store data"
+  oai_arn           = module.cloudfront.aws_cloudfront_origin_access_identity_oai_arn
+}
+
+module "bucket_content" {
+  source            = "../../storage/s3_upload"
+  bucket_name       = "naumanen.click" 
+  upload_directory  = var.upload_directory
 }
 
 module "acm_certificate" {

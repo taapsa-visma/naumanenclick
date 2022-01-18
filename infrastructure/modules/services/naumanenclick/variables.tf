@@ -1,9 +1,20 @@
 variable "environment" {
-  type        = string
   description = "Environment where Route 53 is deployed"
+  type        = string
 }
 
 variable "domain_name" {
-  type        = string
   description = "Public site domain name"
+  type        = string
 }
+
+variable "bucket_name" {
+  description = "Public site domain name"
+  type        = string
+}
+
+variable "upload_directory" {
+  description = "Public site domain name"
+  type        = string
+}
+

@@ -13,3 +13,7 @@ variable "purpose_of_bucket" {
   description = "In what way is bucket going to be used"
   type        = string
 }
+
+variable "oai_arn" {
+  type = string
+}

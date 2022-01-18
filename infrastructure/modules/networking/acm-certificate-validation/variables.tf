@@ -1,6 +1,6 @@
 variable "certificate_arn" {
-  type        = string
   description = "Certificate resource arn"
+  type        = string
 }
 
 variable "cert_validation" {

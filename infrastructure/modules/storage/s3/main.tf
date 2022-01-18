@@ -32,3 +32,8 @@ resource "aws_s3_bucket_public_access_block" "s3block" {
   ignore_public_acls      = true
   restrict_public_buckets = true
 }
+
+resource "aws_s3_bucket_policy" "s3policy" {
+  bucket = aws_s3_bucket.bucket.id
+  policy = data.aws_iam_policy_document.s3policy.json
+}

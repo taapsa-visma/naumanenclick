@@ -7,7 +7,7 @@ function App() {
       <header className="App-header">
         <h1>naumanen.click</h1>
       </header>
-      <div className="App-content">
+      <div data-testid="content" className="App-content">
         <code>Hello World</code>
         <p>
           You should probably learn <a className="App-link" href="https://reactjs.org" target="_blank" rel="noopener noreferrer">React</a> ¯\_(ツ)_/¯

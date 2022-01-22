@@ -35,12 +35,12 @@ jobs:
     - name: Install project dependencies
       run: |
         yarn --cwd ./site install --prefer-offline
-    - name: Prod Build
-      run: |
-        yarn --cwd ./site build
     - name: Unit Tests
       run: |
         yarn --cwd ./site test
+    - name: Prod Build
+      run: |
+        yarn --cwd ./site build
     - name: Deploy to S3
       uses: jakejarvis/s3-sync-action@master
       with:

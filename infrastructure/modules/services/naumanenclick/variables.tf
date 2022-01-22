@@ -12,9 +12,3 @@ variable "bucket_name" {
   description = "Public site domain name"
   type        = string
 }
-
-variable "upload_directory" {
-  description = "Public site domain name"
-  type        = string
-}
-

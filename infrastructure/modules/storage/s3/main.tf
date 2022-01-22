@@ -25,13 +25,13 @@ resource "aws_s3_bucket" "bucket" {
 
 # Manages S3 bucket-level Public Access Block configuration.
 # https://docs.aws.amazon.com/AmazonS3/latest/userguide/access-control-block-public-access.html
-resource "aws_s3_bucket_public_access_block" "s3block" {
-  bucket                  = aws_s3_bucket.bucket.id
-  block_public_acls       = true
-  block_public_policy     = true
-  ignore_public_acls      = true
-  restrict_public_buckets = true
-}
+# resource "aws_s3_bucket_public_access_block" "s3block" {
+#   bucket                  = aws_s3_bucket.bucket.id
+#   block_public_acls       = true
+#   block_public_policy     = true
+#   ignore_public_acls      = true
+#   restrict_public_buckets = true
+# }
 
 resource "aws_s3_bucket_policy" "s3policy" {
   bucket = aws_s3_bucket.bucket.id

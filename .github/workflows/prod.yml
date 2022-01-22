@@ -2,8 +2,6 @@
 
 name: Prod build
 
-source_path: "./site"
-
 on:
   pull_request:
   push:
@@ -26,10 +24,10 @@ jobs:
         node-version: ${{ matrix.node-version }}
     - name: Prod Build
       run: |
-        npm run build --prefix ${{ source_path }}
+        npm run build --prefix ./site
     - name: Unit Tests
       run: |
-        npm test --prefix ${{ source_path }}
+        npm test --prefix ./site
     - name: Deploy to S3
       uses: jakejarvis/s3-sync-action@master
       with:

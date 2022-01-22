@@ -17,9 +17,10 @@ name: Lint Code Base
 on:
   push:
     branches-ignore: [main]
-    # Remove the line above to run when pushing to master
-  pull_request:
-    branches: [main]
+    # Remove the line above to run when pushing to main
+  # pull_request:
+  #   branches: [main]
+  # No need to lint when pulling if lintet when pushing
 
 ###############
 # Set the Job #

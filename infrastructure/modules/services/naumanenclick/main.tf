@@ -5,12 +5,6 @@ module "bucket" {
   oai_arn           = module.cloudfront.aws_cloudfront_origin_access_identity_oai_arn
 }
 
-module "bucket_content" {
-  source            = "../../storage/s3_upload"
-  bucket_name       = "naumanen.click" 
-  upload_directory  = var.upload_directory
-}
-
 module "acm_certificate" {
   source      = "../../networking/acm-certificate"
   domain_name = var.domain_name
@@ -37,4 +31,11 @@ module "acm_cert_validation" {
   source                  = "../../networking/acm-certificate-validation"
   certificate_arn         = module.acm_certificate.acm_certificate_arn
   cert_validation         = module.route53.cert_validation
+}
+
+module "iam_pipeline" {
+  source                      = "../../iam/github-pipeline"
+  environment                 = var.environment
+  s3_bucket_arns              = module.bucket.bucket_arn
+  cloudfront_distribution_arn = module.cloudfront.cloudfront_distribution_arn
 }

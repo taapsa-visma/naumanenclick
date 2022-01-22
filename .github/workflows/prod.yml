@@ -18,19 +18,30 @@ jobs:
 
     steps:
     - uses: actions/checkout@v1
+    - name: Get yarn cache directory path
+      id: yarn-cache-dir-path
+      run: echo "::set-output name=dir::$(yarn cache dir)"
+    - uses: actions/cache@v2
+      id: yarn-cache
+      with:
+        path: ${{ steps.yarn-cache-dir-path.outputs.dir }}
+        key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
+        restore-keys: |
+          ${{ runner.os }}-yarn-
     - name: Use Node.js ${{ matrix.node-version }}
       uses: actions/setup-node@v1
       with:
         node-version: ${{ matrix.node-version }}
-    - name: NPM Install
+    - name: Yarn Install
+      if: steps.yarn-cache.outputs.cache-hit != 'true'
       run: |
-        npm install --prefix ./site
+        yarn --cwd ./site install 
     - name: Prod Build
       run: |
-        npm run build --prefix ./site
+        yarn --cwd ./site build
     - name: Unit Tests
       run: |
-        npm test --prefix ./site
+        yarn --cwd ./site test
     - name: Deploy to S3
       uses: jakejarvis/s3-sync-action@master
       with:

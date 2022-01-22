@@ -8,3 +8,5 @@ Everything for naumanen.click website
    1. Mikä homma Block public access (bucket settings)?
       1. eikö IAM rooli mikä lisätty pitäisi olla riittävästi ja nää voi olla kaikki päällä
          1. vai pitääkö S3 bucketiin jotenkin vielä työntää se IAM policy??
+
+[![GitHub Super-Linter](https://github.com/taapsa-visma/naumanenclick/workflows/Lint%20Code%20Base/badge.svg)](https://github.com/marketplace/actions/super-linter)

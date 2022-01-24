@@ -47,7 +47,7 @@ jobs:
         aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
         aws-region: ${{ secrets.AWS_REGION }}
     - name: Sync S3 bucket
-      run: aws s3 sync build/. s3://naumanen.click
+      run: aws s3 sync site/build/. s3://naumanen.click
     - name: Invalidate Cloudfront
       uses: docker://rewindio/github-action-cloudfront-invalidate
       env:

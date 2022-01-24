@@ -10,7 +10,7 @@ function App() {
       <div data-testid="content" className="App-content">
         <code>Hello World</code>
         <p>
-          You should probably learn <a className="App-link" href="https://reactjs.org" target="_blank" rel="noopener noreferrer">React</a> ¯\_(ツ)_/¯ ?
+          You should learn <a className="App-link" href="https://reactjs.org" target="_blank" rel="noopener noreferrer">React</a> ¯\_(ツ)_/¯ ?
         </p>
       </div>
     </div>

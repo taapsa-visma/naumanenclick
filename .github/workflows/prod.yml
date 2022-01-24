@@ -39,10 +39,10 @@ jobs:
         yarn install --prefer-offline
     - name: Unit Tests
       run: |
-        yarn --cwd ./site test
+        yarn test
     - name: Prod Build
       run: |
-        yarn --cwd ./site build
+        yarn build
     - name: Configure AWS Credentials
       uses: aws-actions/configure-aws-credentials@v1
       with:

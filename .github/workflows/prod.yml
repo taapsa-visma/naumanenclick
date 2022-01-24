@@ -25,7 +25,7 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
         cache: yarn
-        cache-dependency-path: site/yarn.lock
+        cache-dependency-path: '**/yarn.lock'
     - name: Install project dependencies
       run: |
         yarn install

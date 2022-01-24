@@ -1,5 +1,6 @@
 import React from 'react';
 import './App.css';
+import Hello from 'common';
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
           You should learn <a className="App-link" href="https://reactjs.org" target="_blank" rel="noopener noreferrer">React</a> ¯\_(ツ)_/¯ ?
         </p>
       </div>
+      <Hello text="World" />
     </div>
   );
 }

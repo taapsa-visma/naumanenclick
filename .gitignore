@@ -18,7 +18,7 @@ override.tf.json
 # See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
 
 # dependencies
-site/node_modules
+*/node_modules
 site/.pnp
 .pnp.js
 

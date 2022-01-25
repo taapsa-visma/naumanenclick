@@ -10,6 +10,7 @@
     "@types/node": "^16.11.21",
     "@types/react": "^17.0.38",
     "@types/react-dom": "^17.0.11",
+    "common": "file:./common",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-scripts": "^5.0.0",
@@ -17,6 +18,7 @@
     "web-vitals": "^2.1.3"
   },
   "scripts": {
+    "build:common": "yarn --cwd ./common/ build",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",

@@ -1,4 +1,4 @@
-# This is a basic workflow to help you get started with Actions
+---
 
 name: Prod build
 
@@ -19,28 +19,28 @@ jobs:
         node-version: [16.x]
 
     steps:
-    - uses: actions/checkout@v2
-    - name: Use Node.js ${{ matrix.node-version }}
-      uses: actions/setup-node@v2
-      with:
-        node-version: ${{ matrix.node-version }}
-        cache: yarn
-        cache-dependency-path: '**/yarn.lock'
-    - name: Build common module
-      run: yarn build:common
-    - name: Install project dependencies
-      run: yarn install
-    - name: Unit Tests
-      run: yarn test
-    - name: Prod Build
-      run: yarn build
-    - name: Configure AWS Credentials
-      uses: aws-actions/configure-aws-credentials@v1
-      with:
-        aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
-        aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-        aws-region: ${{ secrets.AWS_REGION }}
-    - name: Sync S3 bucket
-      run: aws s3 sync build/. s3://naumanen.click
-    - name: Invalidate Cloudfront distribution cache
-      run: aws cloudfront create-invalidation --distribution-id ${{ secrets.CLOUDFRONT_DISTRIBUTION_ID }} --paths '/*'
+      - uses: actions/checkout@v2
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v2
+        with:
+          node-version: ${{ matrix.node-version }}
+          cache: yarn
+          cache-dependency-path: '**/yarn.lock'
+      - name: Build common module
+        run: yarn build:common
+      - name: Install project dependencies
+        run: yarn install
+      - name: Unit Tests
+        run: yarn test
+      - name: Prod Build
+        run: yarn build
+      - name: Configure AWS Credentials
+        uses: aws-actions/configure-aws-credentials@v1
+        with:
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-region: ${{ secrets.AWS_REGION }}
+      - name: Sync S3 bucket
+        run: aws s3 sync build/. s3://naumanen.click
+      - name: Invalidate Cloudfront distribution cache
+        run: aws cloudfront create-invalidation --distribution-id ${{ secrets.CLOUDFRONT_DISTRIBUTION_ID }} --paths '/*'

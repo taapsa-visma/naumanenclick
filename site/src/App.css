@@ -2,11 +2,11 @@ body {
   background-color: #282c34;
 }
 
-.App {
+.app {
   text-align: center;
 }
 
-.App-header {
+.app-header {
   background-color: #282c34;
   min-height: 50vh;
   display: flex;
@@ -17,7 +17,7 @@ body {
   color: white;
 }
 
-.App-content {
+.app-content {
   background-color: #282c34;
   display: flex;
   flex-direction: column;
@@ -39,8 +39,8 @@ h1 {
   from {
     font-size: 100%;
   }
+
   to {
     font-size: 300%;
   }
 }
-

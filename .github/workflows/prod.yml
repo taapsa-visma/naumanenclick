@@ -26,15 +26,14 @@ jobs:
         node-version: ${{ matrix.node-version }}
         cache: yarn
         cache-dependency-path: '**/yarn.lock'
+    - name: Build common module
+      run: yarn build:common
     - name: Install project dependencies
-      run: |
-        yarn install
+      run: yarn install
     - name: Unit Tests
-      run: |
-        yarn test
+      run: yarn test
     - name: Prod Build
-      run: |
-        yarn build
+      run: yarn build
     - name: Configure AWS Credentials
       uses: aws-actions/configure-aws-credentials@v1
       with:

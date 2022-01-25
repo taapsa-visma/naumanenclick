@@ -1,7 +1,8 @@
 import React from 'react';
 import './App.css';
+import { sayHello } from 'common'
 
-function App() {
+function App(this: any) {
   return (
     <div className="App">
       <header className="App-header">
@@ -10,7 +11,8 @@ function App() {
       <div data-testid="content" className="App-content">
         <code>Hello World</code>
         <p>
-          You should learn <a className="App-link" href="https://reactjs.org" target="_blank" rel="noopener noreferrer">React</a> ¯\_(ツ)_/¯ ?
+          You should learn <a className="App-link" href="https://reactjs.org" target="_blank" rel="noopener noreferrer">React</a> ¯\_(ツ)_/¯ ?<br/>
+          { sayHello('Tapio') }
         </p>
       </div>
     </div>

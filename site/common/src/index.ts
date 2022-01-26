@@ -1,4 +1,4 @@
-export class EmailAddress {
+export class EmailAddressValidator {
   public static isValid(email: string | null | undefined): boolean {
     if (!email) {
       return false

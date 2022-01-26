@@ -4,18 +4,12 @@ import { EmailAddressValidator } from 'common'
 function CheckEmail() {
     const [inputValue, setInputValue] = useState('');
     const [resultValue, setResultValue] = useState('');
-  
-    const handleInputChange = () => {
-      setInputValue(inputValue);
-    };
-  
-    const handleClick = () => {
+
+    const handleInputChange = (event) => {
+      setInputValue(event.target.value);
       console.log('Email checked!');
       const result = EmailAddressValidator.isValid(inputValue)
-      if (inputValue === '') {
-        setResultValue("You didn't give any email!");
-      }
-      else if (result) {
+      if (result) {
         setResultValue('It is valid \\,,/ !');
       } else {
         setResultValue('Not valid :(');
@@ -26,7 +20,6 @@ function CheckEmail() {
       <div className='email-checker'>
         <h5>Is your email valid?</h5>
         <input value={inputValue} onChange={handleInputChange} />
-        <button onClick={handleClick}>Submit</button>
         <p>{ resultValue }</p>
       </div>
     );

@@ -8,13 +8,14 @@ function CheckEmail() {
     const handleInputChange = (event) => {
       setInputValue(event.target.value);
       console.log('Email checked!');
-      const result = EmailAddressValidator.isValid(inputValue)
-      if (result) {
+      if (EmailAddressValidator.isValid(inputValue)) {
         setResultValue('It is valid \\,,/ !');
       } else {
         setResultValue('Not valid :(');
       }
     };
+
+    inputValue === '' && setTimeout(() => setResultValue(''), 1);
   
     return (
       <div className='email-checker'>

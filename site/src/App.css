@@ -17,7 +17,8 @@ body {
   color: white;
 }
 
-.app-content, .email-checker {
+.app-content, 
+.email-checker {
   background-color: #282c34;
   display: flex;
   flex-direction: column;
@@ -36,7 +37,7 @@ h1 {
 }
 
 .email-checker h5 {
-  margin-bottom: 0px;
+  margin-bottom: 0;
 }
 
 @keyframes zoom {

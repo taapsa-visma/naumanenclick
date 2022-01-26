@@ -1,4 +1,4 @@
-import React, { useState, ChangeEvent, MouseEvent } from 'react';
+import React from 'react';
 import './App.css';
 import CheckEmail from  "./components/Checkemail";
 

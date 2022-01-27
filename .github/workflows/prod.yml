@@ -8,8 +8,8 @@ on:
       - main
 
 jobs:
-  build_modules:
-    name: Build common module
+  build_app:
+    name: Build app
     runs-on: ubuntu-latest
     defaults:
       run:
@@ -29,26 +29,6 @@ jobs:
           cache-dependency-path: '**/yarn.lock'
       - name: Build common module
         run: yarn build:common
-
-  build_app:
-    name: Build the app
-    runs-on: ubuntu-latest
-    defaults:
-      run:
-        working-directory: site
-    
-    strategy:
-      matrix:
-        node-version: [16.x]
-
-    steps:
-      - uses: actions/checkout@v2
-      - name: Use Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@v2
-        with:
-          node-version: ${{ matrix.node-version }}
-          cache: yarn
-          cache-dependency-path: '**/yarn.lock'
       - name: Install project dependencies
         run: yarn install
       - name: Unit Tests

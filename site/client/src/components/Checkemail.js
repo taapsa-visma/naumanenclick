@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { EmailAddressValidator } from 'common'
+import { EmailAddressValidator } from '@naumanenclick/common'
 
 export default function CheckEmail() {
     const [inputValue, setInputValue] = useState('');

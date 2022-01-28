@@ -10,6 +10,8 @@ Everything for naumanen.click site
 
 When developing modules do `yarn link` in your module folder. Then go to main app folder and run `yarn link <module name>` and you are all set. When ever you do changes just build the module and start the app again.
 
+Or you should start using workspaces. Hot reload works nicely!
+
 ### Lint your code
 
 <https://github.com/github/super-linter/blob/main/docs/run-linter-locally.md>

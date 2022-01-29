@@ -39,3 +39,15 @@ module "iam_pipeline" {
   s3_bucket_arns              = module.bucket.bucket_arn
   cloudfront_distribution_arn = module.cloudfront.cloudfront_distribution_arn
 }
+
+module "github_secret_access_key_id" {
+  source       = "../../github/secrets"
+  secret_name  = "AWS_ACCESS_KEY_ID"
+  secret_value = module.iam_pipeline.iam_access_key_id
+}
+
+module "github_secret_access_key_secret" {
+  source       = "../../github/secrets"
+  secret_name  = "AWS_SECRET_ACCESS_KEY"
+  secret_value = module.iam_pipeline.iam_access_key_secret
+}

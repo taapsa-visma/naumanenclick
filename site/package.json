@@ -8,7 +8,7 @@
   "scripts": {
     "client": "yarn workspace @naumanenclick/client start",
     "start": "concurrently \"yarn client\" \"yarn build-common\"",
-
+    "test": "yarn workspace @naumanenclick/client test",
     "build-common": "yarn workspace @naumanenclick/common build",
     "build-client": "yarn workspace @naumanenclick/client build",
     "build": "concurrently \"yarn build-client\" \"yarn build-common\""

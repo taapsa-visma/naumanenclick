@@ -1,6 +1,6 @@
 resource "aws_cloudfront_distribution" "cf" {
   enabled             = true
-  aliases             = [var.domain_name]
+  aliases             = [var.domain_name, "www.${var.domain_name}"]
   default_root_object = "index.html"
 
   origin {

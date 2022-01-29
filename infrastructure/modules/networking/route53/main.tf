@@ -33,3 +33,15 @@ resource "aws_route53_record" "websiteurl" {
     evaluate_target_health = true
   }
 }
+
+resource "aws_route53_record" "www_websiteurl" {
+  name    = "www.${var.domain_name}"
+  zone_id = aws_route53_zone.domain.zone_id
+  type    = "A"
+
+  alias {
+    name                   = var.cloudfront_distribution_domain_name
+    zone_id                = var.cloudfront_distribution_hosted_zone_id
+    evaluate_target_health = true
+  }
+}

@@ -29,10 +29,10 @@ jobs:
           cache-dependency-path: '**/yarn.lock'
       - name: Install project dependencies
         run: yarn install
-      - name: Unit Tests
-        run: yarn test
       - name: Prod Build
         run: yarn build
+      - name: Unit Tests
+        run: yarn test
       - name: Configure AWS Credentials
         uses: aws-actions/configure-aws-credentials@v1
         with:

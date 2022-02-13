@@ -1,6 +1,6 @@
 /** source/controllers/posts.ts */
-import { EmailAddress } from "@naumanenclick/common";
-import { Request, Response } from "express";
+import { EmailAddress } from '@naumanenclick/common';
+import { Request, Response } from 'express';
 
 const validateEmailAddress = async (req: Request, res: Response) => {
   const email: string = req.query.email as string;

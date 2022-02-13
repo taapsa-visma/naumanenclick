@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { EmailAddressValidator } from '@naumanenclick/common'
+import { EmailAddress } from '@naumanenclick/common'
 
 export default function CheckEmail() {
     const [inputValue, setInputValue] = useState('');
@@ -11,7 +11,7 @@ export default function CheckEmail() {
 
     const handleClick = () => {
       console.log('Email checked!');
-      const result = EmailAddressValidator.isValid(inputValue)
+      const result = EmailAddress.isValid(inputValue)
       if (inputValue === '') {
         setResultValue("You didn't give any email!");
       }

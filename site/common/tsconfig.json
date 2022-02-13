@@ -1,13 +1,13 @@
 {
-    "compilerOptions": {
-      "target": "es2020",
-      "module": "commonjs",
-      "declaration": true,
-      "outDir": "./dist",
-      "typeRoots": [
-        "./node_modules/@types"
-      ]
-    },
-    "include": ["**/*.ts"],
-    "exclude": ["node_modules/**/*", "dist"]
-  }
+  "compilerOptions": {
+    "target": "es2020",
+    "module": "commonjs",
+    "declaration": true,
+    "outDir": "./dist",
+    "typeRoots": [
+      "./node_modules/@types"
+    ]
+  },
+  "include": ["**/*.ts"],
+  "exclude": ["node_modules/**/*", "dist"]
+}

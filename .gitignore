@@ -27,7 +27,7 @@ site/.pnp
 site/coverage
 
 # production
-site/build
+**/*/build
 **/*/dist
 
 # misc

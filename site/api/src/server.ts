@@ -2,7 +2,7 @@
 import http from "http";
 import express, { Express } from "express";
 import morgan from "morgan";
-import routes from "./routes/validates";
+import routes from "./routes/validate";
 
 const router: Express = express();
 

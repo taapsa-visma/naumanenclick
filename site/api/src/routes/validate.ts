@@ -1,8 +1,8 @@
-/** source/routes/posts.ts */
-import express from 'express';
-import controller from '../controllers/validate';
-const router = express.Router();
+import express from 'express'
+import controller from '../controllers/validate'
 
-router.post('/validate', controller.validateEmailAddress);
+const router = express.Router()
 
-export = router;
+router.post('/validate', controller.validateEmailAddress)
+
+export = router
